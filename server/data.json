@@ -90,6 +90,13 @@
       "money": -100,
       "date": "2025-08-03T23:01:15.747Z",
       "useFor": "drinks"
+    },
+    {
+      "id": "76e1",
+      "type": "pay",
+      "money": -30,
+      "date": "2025-08-02T04:00:00.000Z",
+      "useFor": "food"
     }
   ]
 }
