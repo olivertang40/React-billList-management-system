@@ -12,6 +12,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+        path: "month",
         element: <Month />,
       },
       {
@@ -26,4 +27,4 @@ const router = createBrowserRouter([
   },
 ]);
 
-export default router
+export default router;
