@@ -1,13 +1,57 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
+import { TabBar } from "antd-mobile";
+import { useDispatch } from "react-redux";
+import { getBillList } from "@/store/modules/billStore";
+import { useEffect } from "react";
+import "./index.scss";
+import {
+  BillOutline,
+  AddCircleOutline,
+  CalculatorOutline,
+} from "antd-mobile-icons";
+
+const tabs = [
+  {
+    key: "/month",
+    title: "月度账单",
+    icon: <BillOutline />,
+  },
+  {
+    key: "/new",
+    title: "记账",
+    icon: <AddCircleOutline />,
+  },
+  {
+    key: "/year",
+    title: "年度账单",
+    icon: <CalculatorOutline />,
+  },
+];
 
 const Layout = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getBillList());
+  }, [dispatch]);
+
+  const navigate = useNavigate();
+  const switchRoute = (path) => {
+    console.log(path);
+    navigate(path);
+  };
+
   return (
-    <div>
-      {/* 配置二级路由的出口 */}
-      <Outlet />
-      我是layout
-      <Link to="/">Month</Link>
-      <Link to="/year">Year</Link>
+    <div className="layout">
+      <div className="container">
+        <Outlet />
+      </div>
+      <div className="footer">
+        <TabBar onChange={switchRoute}>
+          {tabs.map((item) => (
+            <TabBar.Item key={item.key} icon={item.icon} title={item.title} />
+          ))}
+        </TabBar>
+      </div>
     </div>
   );
 };
