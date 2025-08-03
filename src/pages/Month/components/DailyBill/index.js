@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { billTypeToName } from "@/constants";
 import Icon from "@/components/Icon";
 
+
 const DailyBill = ({ date, billList }) => {
   const dayResult = useMemo(() => {
     const pay = billList

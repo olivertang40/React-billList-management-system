@@ -153,17 +153,36 @@
     text-align: center;
 
     .btn {
-    width: 200px;
-    --border-width: 0;
-    --background-color: #fafafa;
-    --text-color: #616161;
-    &:first-child {
-    margin-right: 15px;
-    }
+      width: 200px;
+      --border-width: 0;
+      --background-color: #fafafa;
+      --text-color: #616161;
+      &:first-child {
+        margin-right: 15px;
+      }
     }
     .btn.save {
-    --background-color: var(--ka-bg-color);
-    --text-color: var(--ka-color);
-    }
+      --background-color: var(--ka-bg-color);
+      --text-color: var(--ka-color);
     }
   }
+}
+
+.keepAccounts {
+  .kaTypeList {
+    .item {
+      .icon {
+        // 默认图标样式
+        border-radius: 50%; // 如需要可设置为圆形
+        transition: background-color 0.2s ease;
+      }
+
+      &.selected {
+        .icon {
+          // 选中时的背景颜色
+          background-color: #d4edda; // 淡绿色背景
+        }
+      }
+    }
+  }
+}

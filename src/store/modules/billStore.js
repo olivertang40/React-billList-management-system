@@ -7,13 +7,18 @@ const billStore = createSlice({
     billList: [],
   },
   reducers: {
+    // 同步修改方法
     setBillList(state, action) {
       state.billList = action.payload;
+    },
+    // 同步添加账单方法
+    addBill(state, action) {
+      state.billList.push(action.payload);
     },
   },
 });
 
-const { setBillList } = billStore.actions;
+const { setBillList, addBill } = billStore.actions;
 
 const getBillList = () => {
   return async (dispatch) => {
@@ -24,7 +29,14 @@ const getBillList = () => {
   };
 };
 
-export { getBillList };
+const addBillList = (data) => {
+  return async (dispatch) => {
+    const res = await axios.post("http://localhost:8824/ka", data);
+    dispatch(addBill(res.data));
+  };
+};
+
+export { getBillList, addBillList };
 
 const reducer = billStore.reducer;
 
