@@ -1,6 +1,86 @@
-# Getting Started with Create React App
+# React Bill Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive bill tracking application built with React that allows users to record and manage their income and expenses efficiently.
+
+## Features
+
+- 📊 Record income and expenses with categorized icons
+- 📅 Date selection for transactions
+- 💰 Amount tracking with real-time calculation
+- 🎨 Responsive design for all devices
+- 🌙 Clean and intuitive user interface
+- 📱 Mobile-first approach
+
+## Technologies
+
+- [React](https://reactjs.org/) - JavaScript library for building user interfaces
+- [React Router](https://reactrouter.com/) - Declarative routing for React applications
+- [Ant Design Mobile](https://mobile.ant.design/) - Mobile UI components for React
+- [Classnames](https://github.com/JedWatson/classnames) - JavaScript utility for conditionally joining classNames
+- [Sass/SCSS](https://sass-lang.com/) - CSS extension language
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (version 14 or higher)
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/react-bill-tracker.git
+```
+
+2. Navigate to the project directory:
+```bash
+cd react-bill-tracker
+```
+
+3. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+### Development
+
+Start the development server:
+```bash
+npm start
+# or
+yarn start
+```
+
+The application will be available at `http://localhost:3000`.
+
+## Project Structure
+
+```
+src/
+├── components/          # Reusable components
+│   └── Icon/           # Icon component for displaying SVG icons
+├── pages/              # Page components
+│   ├── Layout/         # Main layout component
+│   ├── Month/          # Monthly bill view
+│   ├── New/            # New bill creation page
+│   └── Year/           # Yearly bill view
+├── constants/          # Application constants and data
+├── router/             # Routing configuration
+├── store/              # State management with Redux/Zustand
+├── App.js              # Main application component
+└── index.js            # Entry point
+```
+
+## Usage
+
+1. Select transaction type (Income or Expense)
+2. Enter the amount
+3. Choose a category for the transaction
+4. Select the date (defaults to today)
+5. Save the transaction
 
 ## Available Scripts
 
@@ -68,3 +148,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License.
